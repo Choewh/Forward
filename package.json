@@ -1,0 +1,17 @@
+{
+    "name": "taboo-game",
+    "version": "1.0.0",
+    "description": "웹 기반 금칙어 게임",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "express": "^4.18.2",
+      "socket.io": "^4.7.4",
+      "uuid": "^9.0.1"
+    },
+    "engines": {
+      "node": "^22.0.0"
+    }
+  }
