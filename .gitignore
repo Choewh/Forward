@@ -109,6 +109,7 @@ $RECYCLE.BIN/
 # IDEs and editors
 .vscode/
 .idea/
+.vs/
 *.sublime-workspace
 *.sublime-project
 *.code-workspace
