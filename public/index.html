@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>금칙어 게임</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header-info">
+      <h1>금칙어 게임</h1>
+    </div>
+    
+    <!-- 초기 화면 -->
+    <div id="initialScreen">
+      <div class="form-container">
+        <div style="display: flex; justify-content: flex-end; width: 100%;">
+          <div class="discord-info">Discord: .sun9lia</div>
+        </div>
+        <div class="form-group profile-section">
+          <label for="profilePic">프로필 사진</label>
+          <div class="profile-picker">
+            <div id="profilePreview" class="profile-preview"></div>
+            <div class="profile-options">
+              <button id="selectProfileBtn" class="btn profile-btn">프로필 선택</button>
+              <input type="file" id="profileImageInput" accept="image/*" style="display: none;">
+              <div id="profileGrid" class="profile-grid" style="display: none;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="playerName">닉네임</label>
+          <input type="text" id="playerName" placeholder="닉네임을 입력하세요">
+        </div>
+        <div class="button-group">
+          <button id="createRoomBtn" class="btn">방 만들기</button>
+          <div class="or-divider">또는</div>
+          <div class="form-group">
+            <label for="roomId">방 번호</label>
+            <input type="text" id="roomId" placeholder="방 번호를 입력하세요">
+          </div>
+          <button id="joinRoomBtn" class="btn">참여하기</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 게임 화면 -->
+    <div id="gameScreen" style="display: none;">
+      <div class="game-info">
+        <h2>방 번호: <span id="roomIdDisplay"></span></h2>
+        <div id="copyRoomId" class="copy-btn">복사</div>
+      </div>
+      
+      <div class="game-container">
+        <!-- 플레이어 목록 -->
+        <div class="players-section">
+          <div class="section-header">
+            <h3>플레이어</h3>
+            <span id="playerCount" class="player-count">0명 참여 중</span>
+          </div>
+          <div id="playersList" class="players-list"></div>
+          <div class="game-controls">
+            <button id="readyBtn" class="btn">준비하기</button>
+            <button id="endGameBtn" class="btn" style="display: none;">게임 종료</button>
+          </div>
+        </div>
+        
+        <!-- 채팅 섹션 -->
+        <div class="chat-section">
+          <h3>채팅</h3>
+          <div id="chatMessages" class="chat-messages"></div>
+          <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="메시지 입력...">
+            <button id="sendMessageBtn" class="btn">전송</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 금칙어 설정 모달 -->
+      <div id="tabooWordModal" class="modal" style="display: none;">
+        <div class="modal-content">
+          <h2>금칙어 설정</h2>
+          <p>한 명의 플레이어에게 금칙어를 설정합니다</p>
+          <div id="tabooWordInputs"></div>
+          <button id="confirmTabooWords" class="btn">확인</button>
+        </div>
+      </div>
+      
+      <!-- 금칙어 사용 알림 모달 -->
+      <div id="tabooUsedModal" class="modal" style="display: none;">
+        <div class="modal-content">
+          <h2>금칙어 사용!</h2>
+          <p id="tabooUsedMessage"></p>
+          <button id="tabooUsedCloseBtn" class="btn">확인</button>
+        </div>
+      </div>
+      
+      <!-- 금칙어 목록 -->
+      <div id="otherTabooWords" class="taboo-words-list" style="display: none;">
+        <h3>다른 플레이어의 금칙어 목록</h3>
+        <div id="tabooWordsList"></div>
+      </div>
+    </div>
+
+    <!-- 알림 모달 (gameScreen 밖으로 이동) -->
+    <div id="alertModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <h2 id="alertTitle">알림</h2>
+        <p id="alertMessage"></p>
+        <button id="alertCloseBtn" class="btn">확인</button>
+      </div>
+    </div>
+
+  </div> <!-- End of container -->
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html> 

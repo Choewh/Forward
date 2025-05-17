@@ -30,12 +30,28 @@ cd taboo-game
 npm install
 ```
 
-3. 서버 실행:
+3. 환경 변수 파일(.env) 생성 (필요한 경우)
+   - 기본적으로 .env 파일이 필요하다면 예시를 참고하여 직접 생성하세요.
+   - 예시:
+     ```env
+     # .env 예시
+     PORT=3000
+     # 기타 환경 변수
+     ```
+
+4. 업로드 폴더 생성
+   - 업로드 이미지를 저장할 폴더가 필요합니다.
+   - 아래 명령어로 폴더를 만드세요:
+     ```bash
+     mkdir -p public/uploads
+     ```
+
+5. 서버 실행:
 ```
 npm start
 ```
 
-4. 웹 브라우저에서 `http://localhost:3000` 접속
+6. 웹 브라우저에서 `http://localhost:3000` 접속
 
 ## 기술 스택
 
@@ -49,4 +65,43 @@ npm start
 
 ## 라이센스
 
-이 프로젝트는 MIT 라이센스 하에 있습니다. 
+이 프로젝트는 MIT 라이센스 하에 있습니다.
+
+## 프로젝트 시작 가이드
+
+1. **저장소 클론**
+   ```bash
+   git clone https://github.com/your-username/taboo-game.git
+   cd taboo-game
+   ```
+
+2. **의존성 설치**
+   ```bash
+   npm install
+   ```
+
+3. **환경 변수 파일(.env) 생성 (필요한 경우)**
+   - 기본적으로 .env 파일이 필요하다면 예시를 참고하여 직접 생성하세요.
+   - 예시:
+     ```env
+     # .env 예시
+     PORT=3000
+     # 기타 환경 변수
+     ```
+
+4. **업로드 폴더 생성**
+   - 업로드 이미지를 저장할 폴더가 필요합니다.
+   - 아래 명령어로 폴더를 만드세요:
+     ```bash
+     mkdir -p public/uploads
+     ```
+
+5. **서버 실행**
+   ```bash
+   npm start
+   ```
+
+6. **웹 브라우저에서 접속**
+   - [http://localhost:3000](http://localhost:3000) 으로 접속
+
+--- 
